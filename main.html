@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health assistant</title>
+    <style>
+        .heading{
+            background-color: aqua;
+            color: black ;
+            display: flex;
+            justify-content: center;
+        }
+        input[type='text']{
+            width: 300px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+        }
+        input[type='submit']{
+            background-color: greenyellow;
+            border-color: green;
+        }
+        .in_put{
+            display: flex;
+            justify-content: center;
+        }
+        .resp p{
+            font-size: 20px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1> HEALTH ASSISTANT</h1>
+    </div>
+    <div class="in_put">
+        <form action="/out" method="post">
+            <input type="text" name="user_details" placeholder="Ask your heath issue" >
+            <input type="submit" value="get_answer">
+        </form>
+    </div>
+        <br>
+        {% if user_details %}
+    <div class="resp">
+            <h2>You asked:</h2>
+            <p>{{user_details}}</p>
+            <br>
+            <h2>Answer:</h2>
+            <p>{{ans}}</p>
+    </div>
+        {% endif %}
+    
+</body>
+</html>
